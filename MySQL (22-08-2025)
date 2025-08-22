@@ -1,0 +1,29 @@
+show databases;
+create database SaThYaBaMa;
+use sathybama;
+create table ECE(
+sId int,
+sName varchar(30),
+sMarks int
+);
+show tables from sathyabama;
+INSERT into ECE(sId,sName,sMarks)
+values(1101,'Rajini',100),(1102,'Kamal',99),(1103,'Ajith',98),(1104,'Vijay',97),(1105,'Suriya',96);
+ALTER table ECE
+add column(
+sEmail varchar(30),
+sPhone int,
+sAge int
+);
+select * from ece;
+ALTER table ECE rename column sMarks to sMark;
+set sql_safe_updates=0;
+update ECE set sName='Kamal Haasan'
+where sId=1102;
+update ECE set sId=sId-1;
+start transaction;
+savepoint a;
+DELETE FROM ECE WHERE MARKS>=98;
+rollback to a;
+DELETE FROM ECE WHERE MARKS>=97;
+commit;
