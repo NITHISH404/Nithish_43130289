@@ -61,3 +61,23 @@ WHERE ride_id NOT IN (
     ORDER BY ride_id
     LIMIT 1
 );
+
+select dropoff_location, sum(ride_fare)
+from rides
+group by dropoff_location having sum(ride_fare)>500;
+
+select ride_id, avg(ride_fare)
+from rides
+group by ride_id having sum(ride_fare)>200;
+
+select ride_id, max(ride_fare)
+from rides
+group by ride_id having max(ride_fare)=500;
+
+select pickup_location, count(*) as total_rides ,sum(ride_fare) as total_fare
+from rides
+group by pickup_location having total_rides > 1 and total_fare < 1000;
+
+select dropoff_location, avg(ride_fare) as Average_Fare
+from rides
+group by dropoff_location having Average_Fare between 50 and 2000;
