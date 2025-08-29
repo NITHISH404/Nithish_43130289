@@ -81,3 +81,39 @@ group by pickup_location having total_rides > 1 and total_fare < 1000;
 select dropoff_location, avg(ride_fare) as Average_Fare
 from rides
 group by dropoff_location having Average_Fare between 50 and 2000;
+
+create database lkq;
+use lkq;
+
+create table award_winners(
+id int,
+name varchar(25),
+award_name varchar(30));
+
+insert into award_winners values(001,'Karthick','Volleyball winners'),(002,'Gopi','Basketball Runners'),(003,'Adib','Oscar winners'),
+(004,'Harij','English SpellBee 2nd Runner-up'),(005,'Loki','Volleyball winners'),(006,'Sakthi','Badminton Nationals runners'),
+(007,'Iqhlas','Debug winners'),(008,'AK','Basketball runners'),(009,'Kamal','Hackathon runners'),
+(010,'Barath','Hackathon winners');
+
+select * from award_winners;
+
+create table students(
+id int,
+name varchar(25));
+
+insert into students values(005,'Loki'),(1001,'Srihari'),(1003,'Dinesh'),(001,'Karthick'),(1005,'Tharun'),
+(1006,'Vamsi'),(1007,'Monish'),(1008,'Rohith'),(1009,'Alwyn'),(1010,'Akash');
+
+select * from students;
+
+select * from students 
+where id=(select id from award_winners where id=5);
+
+select * from students 
+where id=(select id from award_winners where name="karthick");
+
+select * from award_winners
+where id=(select id from students where id=1);
+
+select * from award_winners
+where id=(select id from students where name="Loki");
