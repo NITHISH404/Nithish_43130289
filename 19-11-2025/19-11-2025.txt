@@ -1,0 +1,118 @@
+package nov19;
+public class OMRKing {
+	void BMW520(){
+		System.out.println("King Car");
+	}
+	public static void main(String[] args) {
+
+		People1 k= new People1();
+		k.bike();
+		System.out.println(k.name_people1);
+		OMRKing king=new OMRKing();
+		king.BMW520();
+	}
+}
+class People1{
+	String name_people1="Karthik";
+	void car(){
+		System.out.println("People1 Car");
+	}
+	void bike(){
+		System.out.println("People1 Bike");
+	}
+}
+class People2{
+	String name_people1="Mahesh";
+	void car(){
+		System.out.println("People2 Car");
+	}
+}
+
+
+
+
+
+
+
+package nov19;
+public class OMRKing {
+	public static void main(String[] args) {
+
+		Program1 program=new Program1(100);
+		
+		program.addition();
+		
+	}
+}
+class Program1{
+	int marks=95; //class variable
+	//user def methods
+	protected void addition(){
+		int result= marks*100;
+		System.out.println(result);
+		//method local inner class
+		class InsideClass{
+			void division(){
+				System.out.println("method Local inner class output");
+			}
+		}
+	}
+	//initi block
+	{
+		System.out.println("Welcome...!");
+		String date="19th Nov 2025";
+		System.out.println(date);
+	}
+	
+	//constru //def //parame
+	public Program1() {
+		System.out.println("Iam a def const..");
+	}
+	public Program1(int a){
+		a=marks+a;
+		System.out.println(a);
+	}
+	
+	
+}
+
+
+
+
+
+
+
+package nov19;
+public class OMRKing {
+	public static void main(String[] args) {
+
+		Son1 s1=new Son1();
+		s1.bike();
+		Son2 s2=new Son2();
+		s2.bike();
+		s2.oldBike();
+	}
+}
+class GrandFather{
+	void oldBike(){
+		System.out.println("Royal Enfield 1983");
+	}
+}
+
+class Father extends GrandFather{
+	void oldBike(){
+		System.out.println("Royal Enfield 2002");
+	}
+}
+
+class Son1 extends Father{
+	void bike(){
+		System.out.println("KTM 390");
+	}
+}
+
+class Son2 extends Father{
+	void bike(){
+		System.out.println("RC KTM 390");
+	}
+}
