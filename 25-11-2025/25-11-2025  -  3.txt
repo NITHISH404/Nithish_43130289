@@ -1,0 +1,15 @@
+package practice_java;
+public class PraC{
+public static void main (String args[]){
+	String s1="Sachin";
+	String s2="Sachin";
+	String s3="Ratan";
+	System.out.println(s1.compareTo(s2));//0
+	System.out.println(s1.compareTo(s3));//1(because s1>s3)
+	System.out.println(s3.compareTo(s1));//-1(because s3 < s1 )
+	StringBuffer sb=new StringBuffer("Hello ");
+	sb.append("Java");//now original string is changed
+	System.out.println(sb);
+	sb.insert(1,"Java");//now original string is changed
+	System.out.println(sb);
+}

@@ -1,0 +1,27 @@
+package practice_java;
+public class PraC{
+public static void main (String args[]){
+String s1="java";//creating string by java string literal
+char ch[]={'s','t','r','i','n','g','s'};
+String s2=new String(ch);//converting char array to string
+String s3=new String("example");//creating java string by new keyword
+System.out.println(s1);
+System.out.println(s2);
+System.out.println(s3);
+String s="Sachin";
+System.out.println(s.toUpperCase());//SACHIN
+
+System.out.println(s.toLowerCase());//sachin
+System.out.println(s);//Sachin(no change in original)
+
+System.out.println(s);// Sachin
+System.out.println(s.trim());//Sachin
+
+System.out.println(s.startsWith("Sa"));//true
+System.out.println(s.endsWith("n"));//true
+
+System.out.println(s.charAt(0));//S
+System.out.println(s.charAt(3));//h
+
+System.out.println(s.length());//6
+}}
