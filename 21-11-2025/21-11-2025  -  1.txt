@@ -1,0 +1,68 @@
+package firstDay;
+
+public class FirstClass
+{
+    public static void main(String[] args) 
+    {
+        Son1 s1 = new Son1();
+        s1.bike();            
+        s1.bike("Orange");    
+
+        Son2 s2 = new Son2();
+        s2.bike();            
+        s2.bike(2025);      
+        s2.oldBike();         
+    }
+}
+
+class GrandFather
+{
+    void oldBike()
+    {
+        System.out.println("Royal Enfield 1983");
+    }
+}
+
+class Father extends GrandFather
+{
+    
+    void oldBike()
+    {
+        System.out.println("Royal Enfield 2002");
+    }
+
+    // Overloaded method
+    void oldBike(String color)
+    {
+        System.out.println("Royal Enfield 2002 - Color: " + color);
+    }
+}
+
+class Son1 extends Father
+{
+    
+    void bike()
+    {
+        System.out.println("KTM 390");
+    }
+
+    
+    void bike(String color)
+    {
+        System.out.println("KTM 390 - Color: " + color);
+    }
+}
+
+class Son2 extends Father
+{
+    
+    void bike()
+    {
+        System.out.println("RC KTM 390");
+    }
+
+    void bike(int modelYear)
+    {
+        System.out.println("RC KTM 390 - Model: " + modelYear);
+    }
+}

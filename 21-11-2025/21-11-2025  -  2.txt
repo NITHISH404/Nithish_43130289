@@ -1,0 +1,23 @@
+package firstDay;
+
+class FirstClass {
+    private String name;
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class Testing {
+    public static void main(String[] args) {
+
+        Person p = new Person();
+
+        p.setName("Nuha");
+        System.out.println(p.getName());
+    }
+}
