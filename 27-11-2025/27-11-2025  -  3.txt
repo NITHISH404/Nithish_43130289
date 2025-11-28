@@ -1,0 +1,18 @@
+package practice_java;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class PraC {
+    String[] stringArray = { "a", "b", "c", "d", "e" };
+
+    ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(stringArray));
+
+    public PraC() {
+        System.out.println(arrayList);
+    }
+
+    public static void main(String[] args) {
+        new PraC();
+    }
+}
