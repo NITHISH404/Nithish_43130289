@@ -1,0 +1,32 @@
+<%@ page import ="java.sql.*" %>
+<%
+String userid = request.getParameter("uname");    
+String pwd = request.getParameter("pass");
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/test?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+        "root",
+        "root"
+    );
+
+    Statement st = con.createStatement();
+    ResultSet rs = st.executeQuery(
+        "SELECT * FROM members WHERE uname='" + userid + "' AND pass='" + pwd + "'"
+    );
+
+    if (rs.next()) {
+        session.setAttribute("userid", userid);
+        response.sendRedirect("success.jsp");
+    } else {
+        out.println("Invalid username or password <a href='index.jsp'>try again</a>");
+    }
+
+    rs.close();
+    st.close();
+    con.close();
+} catch(Exception e) {
+    out.println("Error: " + e.getMessage());
+}
+%>
